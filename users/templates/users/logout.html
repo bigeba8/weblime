@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block content %}
+<section class="slice py-6 pt-lg-7 pb-lg-8 bg-gradient-primary">
+</section>
+<div class="content-section">
+      <h2>You have been logged out!</h2>
+       <div class="border-top pt-3">
+
+           <small class="text-muted">
+               Log In again? <a href="{% url 'login' %}">Log In</a>
+           </small>
+       </div>
+   </div>
+
+{% endblock content %}

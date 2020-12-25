@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Webpixels">
+    {% if title %}
+      <title>WebLime | {{ title }}</title>
+    {% else %}
+      <title>WebLime | Digital Agency</title>
+    {% endif %}
+    <!-- Preloader -->
+    <style>
+        @keyframes hidePreloader {
+            0% {
+                width: 100%;
+                height: 100%;
+            }
+
+            100% {
+                width: 0;
+                height: 0;
+            }
+        }
+
+        body>div.preloader {
+            position: fixed;
+            background: white;
+            width: 100%;
+            height: 100%;
+            z-index: 1071;
+            opacity: 0;
+            transition: opacity .5s ease;
+            overflow: hidden;
+            pointer-events: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        body:not(.loaded)>div.preloader {
+            opacity: 1;
+        }
+
+        body:not(.loaded) {
+            overflow: hidden;
+        }
+
+        body.loaded>div.preloader {
+            animation: hidePreloader .5s linear .5s forwards;
+        }
+    </style>
+    <script>
+        window.addEventListener("load", function() {
+            setTimeout(function() {
+                document.querySelector('body').classList.add('loaded');
+            }, 300);
+        });
+    </script>
+    <!-- Favicon -->
+    <link rel="icon" href="{% static 'assets/img/brand/favicon.png' %}" type="image/png"><!-- Font Awesome -->
+    <link rel="stylesheet" href="{% static 'assets/libs/@fortawesome/fontawesome-free/css/all.min.css' %}">
+    <!-- Quick CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/quick-website.css' %}" id="stylesheet">
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="spinner-border text-primary" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Header -->
+    <header class="" id="header-main">
+        <!-- Navbar -->
+        <nav class="navbar navbar-main navbar-expand-lg shadow navbar-light" id="navbar-main">
+            <div class="container">
+                <!-- Brand -->
+                <a class="navbar-brand" href="{% url 'profile' %}">
+                    <h3>WebLime Admin</h3>
+                </a>
+                <!-- Collapse -->
+                <div class="collapse navbar-collapse navbar-collapse-overlay order-lg-3" id="navbar-main-collapse">
+                    <!-- Toggler -->
+                    <div class="position-relative">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-main-collapse" aria-controls="navbar-main-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                            <i data-feather="x"></i>
+                        </button>
+                    </div>
+                    <!-- Right navigation -->
+                    <ul class="navbar-nav align-items-lg-center d-none d-lg-flex ml-lg-auto">
+                        <li class="nav-item dropdown dropdown-animate">
+                            <a class="nav-link nav-link-icon" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="avatar rounded-circle">
+                                    <img alt="Image placeholder" src="{% static 'assets/img/theme/light/person-auth.jpg' %}">
+                                </span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-sm dropdown-menu-right dropdown-menu-arrow p-3">
+                                <h6 class="dropdown-header px-0 mb-2 text-primary">Hi, {{ user.first_name }}!</h6>
+                                <a href="{% url 'home' %}" class="dropdown-item">
+                                    <i data-feather="home"></i>
+                                    <span>Home</span>
+                                </a>
+                                <a href="{% url 'user-posts' %}" class="dropdown-item">
+                                    <i data-feather="user"></i>
+                                    <span>My Posts</span>
+                                </a>
+                                <a href="{% url 'post-create' %}" class="dropdown-item">
+                                    <i data-feather="edit"></i>
+                                    <span>Write Post</span>
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a href="{% url 'settings' %}" class="dropdown-item">
+                                    <i data-feather="settings"></i>
+                                    <span>Settings</span>
+                                </a>
+                                <a href="{% url 'logout' %}" class="dropdown-item">
+                                    <i data-feather="log-out"></i>
+                                    <span>Logout</span>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                    <!-- Mobile button -->
+                    <div class="d-lg-none px-4 text-center">
+                        <a href="https://themes.getbootstrap.com/product/quick-website-ui-kit-2/" class="btn btn-block btn-sm btn-warning" target="_blank">Purchase now</a>
+                    </div>
+                </div>
+                <!-- Avatar menu -->
+                <div class="order-lg-4 ml-lg-3">
+
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main content -->
+    <!-- Header -->
+    <section class="p-5 bg-section-secondary">
+      <main role="main" class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+            {% if messages  %}
+              {% for message in messages %}
+                <div class="alert alert-{{ message.tags }}">
+                  {{ message }}
+                </div>
+              {% endfor %}
+            {% endif %}
+
+              {% block content %}{% endblock %}
+
+          </div>
+    </section>
+    <!-- Core JS  -->
+    <script src="{% static 'assets/libs/jquery/dist/jquery.min.js' %}"></script>
+    <script src="{% static 'assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'assets/libs/svg-injector/dist/svg-injector.min.js' %}"></script>
+    <script src="{% static 'assets/libs/feather-icons/dist/feather.min.js' %}"></script>
+    <!-- Optional JS -->
+    <script src="{% static 'assets/libs/in-view/dist/in-view.min.js' %}"></script>
+    <script src="{% static 'assets/libs/sticky-kit/dist/sticky-kit.min.js' %}"></script>
+    <script src="{% static 'assets/libs/imagesloaded/imagesloaded.pkgd.min.js' %}"></script>
+    <!-- Page JS -->
+    <script src="{% static 'assets/libs/progressbar.js/dist/progressbar.min.js' %}"></script>
+    <!-- Quick JS -->
+    <script src="{% static 'assets/js/quick-website.js' %}"></script>
+    <!-- Feather Icons -->
+    <script>
+        feather.replace({
+            'width': '1em',
+            'height': '1em'
+        })
+    </script>
+    <script type="text/javascript">
+      $('#imgpost').find('img').addClass('img-fluid')
+    </script>
+</body>
+
+</html>

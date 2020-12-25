@@ -1,0 +1,28 @@
+{% extends "users/app_base.html" %}
+{% load static %}
+{% block content %}
+
+    <div data-offset-top="#navbar-main">
+        <div class="container pb-7">
+            <div class="row align-items-center justify-content-center">
+                <div class="text-center">
+                    <h1 class="text-primary">{{ object.title }}</h1>
+                    <div class="text-center pt-3">
+                      <span class="lead text-primary opacity-8">{{ object.author.first_name }} {{ object.author.last_name }} | {{ object.date_posted|date:"F d, Y" }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<article class="media content-section">
+  <div class="media-body">
+    <div class="col-xl-8 col-lg-10 offset-xl-2 offset-lg-1" id="imgpost">
+        <article>
+          {{ object.content|safe }}
+        </article>
+    </div>
+  </div>
+</article>
+
+{% endblock content %}

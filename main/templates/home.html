@@ -1,0 +1,199 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block content %}
+<!-- Main content -->
+<section class="slice py-5">
+    <div class="container">
+        <div class="row row-grid align-items-center">
+            <div class="col-12 col-md-5 col-lg-6 order-md-2">
+                <!-- Image-->
+                <figure class="w-100">
+                        <img alt="Image placeholder" src="{% static 'assets/img/svg/illustrations/illustration-1.svg' %}" class="img-fluid mw-md-120">
+                </figure>
+
+            </div>
+            <div class="col-12 col-md-7 col-lg-6 order-md-1 pr-md-5">
+                <!-- Heading -->
+
+                <h5 class="h1 font-weight-bold mb-3">Digital experiences crafted with <span class="text-primary typed" id="type-example-1" data-type-this="love., patience., dedication."></span></h5>
+                <!-- Text -->
+                <p class="lead text-center text-md-left text-muted">
+                    With deep commitment to and appreciation for the human element, we craft superior experiences through ingenuity.
+                </p>
+                <!-- Buttons -->
+                <div class="text-center text-md-left mt-5">
+                    <a href="{% url 'solutions' %}" class="btn btn-primary btn-icon">
+                        <span class="btn-inner--text">Solutions</span>
+                        <span class="btn-inner--icon">
+                            <i data-feather="arrow-right"></i>
+                        </span>
+                    </a>
+                    <a href="{% url 'get-in-touch' %}" class="btn btn-neutral btn-icon d-none d-lg-inline-block">Get In Touch</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="slice slice-lg pt-lg-6 pb-0 pb-lg-6">
+    <div class="container">
+        <!-- Card -->
+        <div class="row mt-5">
+            <div class="col-md-4">
+                <div class="card border-0 bg-soft-danger">
+                    <div class="card-body pb-5">
+                        <div class="pt-4 pb-5">
+
+                            <img src="{% static 'assets/img/svg/illustrations/illustration-5.svg' %}" class="img-fluid img-center" style="height: 200px;" alt="Illustration" />
+                        </div>
+                        <h5 class="h4 lh-130 text-dark mb-3">Unleash your creativity</h5>
+                        <p class="text-dark opacity-6 mb-0">With deep commitment to and appreciation for the human element, we craft superior experiences through ingenuity.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card border-0 bg-soft-success mt-lg-5">
+                    <div class="card-body pb-5">
+                        <div class="pt-4 pb-5">
+                            <img src="{% static 'assets/img/svg/illustrations/weblime-results.svg' %}" class="img-fluid img-center" style="height: 200px;" alt="Illustration" />
+                        </div>
+                        <h5 class="h4 lh-130 text-dark mb-3">Get more results</h5>
+                        <p class="text-dark opacity-6 mb-0">We are passionate about technology and focus on integrating the latest advancements into your business to propel substantial growth.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card border-0 bg-soft-warning mt-lg-7">
+                    <div class="card-body pb-5">
+                        <div class="pt-4 pb-5">
+                            <img src="{% static 'assets/img/svg/illustrations/illustration-7.svg' %}" class="img-fluid img-center" style="height: 200px;" alt="Illustration" />
+                        </div>
+                        <h5 class="h4 lh-130 text-dark mb-3">Increase your audience</h5>
+                        <p class="text-dark opacity-6 mb-0">Enhance your reach with creative marketing strategies and campaigns. Reach the right people, with the right message, at the right time.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="slice slice-lg">
+    <div class="container">
+        <div class="row row-grid justify-content-around align-items-center">
+            <div class="col-lg-6 order-lg-2 ml-lg-auto pl-lg-6">
+                <!-- Heading -->
+                <h5 class="h2 mt-4">Driven By Creativity And Passion</h5>
+                <!-- Text -->
+                <p class="lead lh-190 my-4">
+                    We are passionate about technology and focus on integrating the latest advancements into your business to propel substantial growth.
+                </p>
+                <!-- List -->
+                <ul class="list-unstyled">
+                    <li class="py-2">
+                        <div class="d-flex align-items-center">
+                            <div>
+                                <div class="icon icon-shape icon-danger icon-m rounded-circle mr-3">
+                                    <i class="fas fa-desktop"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <span class="h6 mb-0">Web Development</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="py-2">
+                        <div class="d-flex align-items-center">
+                            <div>
+                                <div class="icon icon-shape icon-primary icon-m rounded-circle mr-3">
+                                    <i class="fas fa-store-alt"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <span class="h6 mb-0">Ecommerce</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="py-2">
+                        <div class="d-flex align-items-center">
+                            <div>
+                                <div class="icon icon-shape icon-warning icon-m rounded-circle mr-3">
+                                    <i class="fas fa-rocket"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <span class="h6 mb-0">Marketing</span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-6 order-lg-1">
+                <!-- Image -->
+                <div class="position-relative zindex-100">
+                    <img alt="Image placeholder" src="{% static 'assets/img/svg/illustrations/illustration-2.svg' %}" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="slice slice-lg pt-10 bg-primary">
+    <!-- SVG separator -->
+    <div class="shape-container shape-line shape-position-top shape-orientation-inverse">
+        <svg width="2560px" height="100px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none" x="0px" y="0px" viewBox="0 0 2560 100" style="enable-background:new 0 0 2560 100;" xml:space="preserve" class="">
+            <polygon points="2560 0 2560 100 0 100"></polygon>
+        </svg>
+    </div>
+    <!-- Container -->
+    <div class="container position-relative zindex-100">
+        <div class="col">
+            <div class="row justify-content-center">
+                <div class="col-md-10 text-center">
+                    <div class="mt-4 mb-6">
+                        <h2 class="h1 text-white">
+                            Brilliant solutions.
+                        </h2>
+                        <h4 class="text-white mt-3">Together, We'll Grow Your Ideas. Take flight with WebLime.</h4>
+                        <a href="#" data-placement="bottom" class="btn btn-lg btn-white btn-icon hover-translate-y-n10 mt-4">
+                            <span class="btn-inner--icon">
+                                <i data-feather="terminal"></i>
+                            </span>
+                            <span class="btn-inner--text">LET'S GO</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="slice slice-lg">
+    <div class="container">
+        <div class="row row-grid justify-content-around align-items-center">
+            <div class="col-lg-5">
+                <!-- Title -->
+                <h5 class="h2 font-weight-normal">{{ posts.0.title }}</h5>
+                <!-- Text -->
+                <p class="lead my-4 font-weight-normal">{{ posts.0.excerpt }}</p>
+                <a href="{% url 'post-detail' posts.0.slug %}"><span class="badge badge-primary badge-pill">CONTINUE READING</span></a>
+            </div>
+            <div class="col-lg-6">
+                    <div class="card bg-primary hover-shadow-lg">
+                        <div class="card-body py-5">
+                            <div class="d-flex align-items-start">
+                              <div class="pb-3">
+                                <div class="icon text-white">
+                                    <i data-feather="book-open"></i>
+                                </div>
+                              </div>
+                                <div class="icon-text pl-4">
+                                    <h5 class="ma-0 text-white font-weight-normal">MORE FROM THE BLOG</h5>
+                                    <ul class="mb-0 text-white opacity-8">
+                                        <li><a class="text-white post-home-links" href="{% url 'post-detail' posts.1.slug %}">{{ posts.1.title }}</a></li>
+                                        <li><a class="text-white post-home-links" href="{% url 'post-detail' posts.2.slug %}">{{ posts.2.title }}</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}

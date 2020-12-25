@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block content %}
+<section class="bg-primary">
+    <div data-offset-top="#navbar-main">
+        <div class="container pb-7">
+            <div class="row align-items-center justify-content-center">
+                <div class="text-center">
+                    <h1 class="text-white">{{ object.title }}</h1>
+                    <div class="text-center pt-5">
+                      <span class="lead text-white opacity-8">{{ object.author.first_name }} {{ object.author.last_name }} | {{ object.date_posted|date:"F d, Y" }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+  <section class="slice slice-lg pt-8 pb-5">
+      <!-- Container -->
+      <div class="container pb-6">
+          <div class="row row-grid align-items-center">
+              <div class="col-xl-8 col-lg-10 offset-xl-2 offset-lg-1" id="imgpost">
+                  <article>
+                    {{ object.content|safe }}
+                  </article>
+                  <!-- Share -->
+                  <div class="row align-items-center mt-7 py-4 border-top border-bottom">
+                      <div class="col mb-3 mb-lg-0">
+                          <div class="media align-items-center">
+                              <div>
+                                  <a href="#" class="avatar rounded-circle mr-3">
+                                      <img alt="Image placeholder" src="../../assets/img/theme/light/person-2.jpg">
+                                  </a>
+                              </div>
+                              <div class="media-body">
+                                  <span class="d-block h6 mb-0">{{ object.author.first_name }} {{ object.author.last_name }}</span>
+                                  <span class="text-sm text-muted">{{ object.date_posted|date:"F d, Y" }}</span>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-auto">
+                          <ul class="list-inline mb-0">
+                              <li class="list-inline-item pr-4">
+                                  <a href="#" class="text-muted"><i data-feather="share" class="mr-1 text-muted"></i> 131</a>
+                              </li>
+                              <li class="list-inline-item pr-4">
+                                  <a href="#" class="text-muted"><i data-feather="eye" class="mr-1 text-muted"></i> 255</a>
+                              </li>
+                              <li class="list-inline-item">
+                                  <a href="#" class="text-muted"><i data-feather="message-circle" class="mr-1 text-muted"></i> 14</a>
+                              </li>
+                          </ul>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!-- SVG separator -->
+      <div class="shape-container shape-position-bottom">
+          <img alt="Image placeholder" src="../../assets/img/svg/separators/line.svg" class="svg-inject fill-section-secondary">
+      </div>
+  </section>
+{% endblock content %}

@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+<section class="slice py-6 pt-lg-7 pb-lg-8 bg-primary">
+    <!-- Container -->
+    <div class="container d-flex align-items-center text-center text-lg-left">
+        <div class="col px-0">
+            <div class="row row-grid align-items-center">
+                <div class="col-lg-6">
+                    <!-- Heading -->
+                    <h1 class="h1 text-white font-weight-normal text-center text-lg-left my-4">Have a project in mind?</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- SVG separator -->
+    <div class="shape-container shape-line shape-position-bottom">
+        <svg width="2560px" height="100px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none" x="0px" y="0px" viewBox="0 0 2560 100" style="enable-background:new 0 0 2560 100;" xml:space="preserve" class="">
+            <polygon points="2560 0 2560 100 0 100"></polygon>
+        </svg>
+    </div>
+</section>
+<section class="slice slice-lg" id="sct-form-contact">
+    <div class="container position-relative zindex-100">
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-6 text-center">
+                <h2>Contact us</h2>
+                <p class="lh-190">If there's something we can help with, just let us know.</p>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <!-- Form -->
+                <form method="POST" action=""  id="form-contact">
+                    {% csrf_token %}
+                    <div class="form-group">
+                      {{ form|crispy }}
+                    </div>
+                    <div class="text-center">
+                        <button class="btn btn-block btn-lg btn-primary mt-4" type="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}

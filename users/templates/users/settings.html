@@ -1,0 +1,28 @@
+{% extends "users/app_base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<div class="content-section">
+
+  <div class="col ml-n3 ml-md-n2">
+      <!-- Title -->
+      <h2 class="mb-0">
+          <b>{{ user.first_name }}</b> {{ user.last_name }}
+      </h2>
+      <!-- Subtitle -->
+      <span class="text-muted d-block">Author</span>
+  </div>
+      <form method ="POST" enctype="multipart/form-data">
+               {% csrf_token %}
+               <fieldset class="form-group">
+                   <legend class="border-bottom mb-4">Profile Info</legend>
+                   {{ u_form|crispy }}
+               </fieldset>
+               <div class="form-group">
+                   <button class="btn btn-block btn-outline-primary" type="submit">Update</button>
+               </div>
+      </form>
+   </div>
+
+{% endblock content %}

@@ -1,0 +1,10 @@
+/env
+**/__pycache__
+.DS_Store
+.project
+uploads/
+**/node_modules
+package-lock.json
+**/migrations
+*.env
+*.pyc
