@@ -30,6 +30,11 @@ class PostDetailView(DetailView):
     model = Post
     template_name = 'blog/post_detail.html'
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context.update({ 'seo_title': self.get_object().title, 'seo_description': self.get_object().excerpt })
+        return context
+
 class PostDetailViewUser(DetailView):
     model = Post
     template_name = 'blog/post_detail_user.html'

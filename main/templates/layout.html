@@ -5,13 +5,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="WebLime">
-    {% if title %}
-      <title>WebLime | {{ title }}</title>
-    {% else %}
-      <title>WebLime | Digital Agency</title>
-    {% endif %}
+
+    <title>{{ seo_title }}</title>
+    <meta name="description" content="{{ seo_description }}">
+
     <style>
       li a.post-home-links:hover {
       color: #152c5b !important;
@@ -74,6 +71,8 @@
             }, 300);
         });
     </script>
+
+
     <!-- Favicon -->
     <link rel="icon" href="{% static 'assets/img/brand/favicon.png' %}" type="image/png">
     <!-- Page CSS -->
