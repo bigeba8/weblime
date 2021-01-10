@@ -108,7 +108,7 @@
         </div>
     </div>
     <!-- Header & Navbar -->
-        {% if request.path == '/' %}
+        {% if request.path == '/' or request.path == "404.html" %}
           <header class="" id="header-main">
           <nav class="navbar navbar-main navbar-expand-lg navbar-light" id="navbar-main">
         {% else %}
