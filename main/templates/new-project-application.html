@@ -1,0 +1,218 @@
+{% extends "layout.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<section class="bg-primary">
+    <div data-offset-top="#navbar-main">
+        <div class="container pb-7">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-lg-7 text-center">
+                    <h1 class="text-white font-weight-normal">New Project Application</h1>
+                    <p class="lead text-white opacity-8">
+                      Interested in working with us? Fill out the form below
+                        to get started. Once completed, we'll be in touch
+                        within two to three business days.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="slice slice-lg" id="sct-form-contact">
+    <div class="container position-relative zindex-100">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+              <form action="/" method="POST">
+                {% csrf_token %}
+
+                <h5 class="pb-1 pt-3 text-primary">Tell us about yourself.</h5>
+                <hr class="m-0 pt-4">
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="form-control-label">What is your first name?</label>
+                            <input class="form-control" type="text" placeholder="Bob">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="form-control-label">What is your last name?</label>
+                            <input class="form-control" type="text" placeholder="Marley">
+                        </div>
+                    </div>
+                </div>
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="form-control-label">What's the best email to reach you?</label>
+                            <input class="form-control" type="email" placeholder="bobm@company.com">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="form-control-label">What's the best phone number to reach you?</label>
+                            <input class="form-control" type="text" placeholder="301-208-0193">
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                      <div class="form-group">
+                        <label class="form-control-label">Will you be our direct point of contact for this project?</label>
+                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                            <label class="btn btn-primary active btn-sm">
+                                <input type="radio" name="custom-radio-2"  id="radioButton2" autocomplete="off"> Yes
+                            </label>
+                            <label class="btn btn-primary btn-sm">
+                                <input type="radio" name="custom-radio-2"  id="radioButton3" autocomplete="off"> No
+                            </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label class="form-control-label">Now for the fun part - tell us about yourself!</label>
+                            <textarea class="form-control" placeholder="I like to eat Apples and I sell honey" rows="3"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <h5 class="pb-1 pt-3 text-primary">Now we'll talk about your business.</h5>
+                <hr class="m-0 pt-4">
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="form-control-label">What is the name of your business?</label>
+                          <input class="form-control" type="text" placeholder="WebLime">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="form-control-label">Do you have an existing website?</label><br>
+                          <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                              <label class="btn btn-primary btn-sm active">
+                                  <input type="radio" name="custom-radio-2"  id="radioButton2" autocomplete="off"> Yes
+                              </label>
+                              <label class="btn btn-primary btn-sm">
+                                  <input type="radio" name="custom-radio-2"  id="radioButton3" autocomplete="off"> No
+                              </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                  <!-- display accorrding to above answer -->
+                  <div class="row">
+                      <div class="col-md-6">
+                          <div class="form-group">
+                              <label class="form-control-label">
+                                What is the URL?
+                              </label>
+                              <input class="form-control" type="text" placeholder="www.yoursite.com">
+                          </div>
+                      </div>
+                      <div class="col-md-6">
+                          <div class="form-group">
+                              <label class="form-control-label">
+                                Where do you currently host your website?
+                              </label>
+                              <input class="form-control" type="text"
+                              placeholder="GoDaddy, HostGator, Namecheap">
+                          </div>
+                      </div>
+                  </div>
+                  <!-- end of toggled section -->
+                  <div class="row">
+                      <div class="col-md-12">
+                          <div class="form-group">
+                              <label class="form-control-label">
+                                What's different about your company?
+                              </label>
+                              <textarea class="form-control"
+                              placeholder="We harevest honey from Jamaica"
+                              rows="3"></textarea>
+                          </div>
+                      </div>
+                  </div>
+
+                  <h5 class="pb-1 pt-3 text-primary">How can we best help?</h5>
+                  <hr class="m-0 pt-4">
+                  <p>We'll be honest, we can do it all — we're that good! However, we really excel on big meaty projects that allow us to showcase our considerable talents at helping your store excel.
+
+Due to demand and the size of projects we work on, we aren't currently able to consider projects under $25,000.</p>
+
+
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="form-control-label">How much are you looking to invest in this project?</label>
+                      <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="vehicle1" name="vehicle1" value="Bike">
+                        <label class="custom-control-label" for="vehicle1"> I have a bike</label><br>
+                      </div>
+                      <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="vehicle2" name="vehicle2" value="Car">
+                        <label class="custom-control-label" for="vehicle2"> I have a car</label><br>
+                      </div>
+                      <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="vehicle3" name="vehicle3" value="Boat">
+                        <label class="custom-control-label" for="vehicle3"> I have a boat</label>
+                      </div>
+                    </div>
+                </div>
+              </div>
+
+                  <div class="row">
+                      <div class="col-md-12">
+                          <div class="form-group">
+                              <label class="form-control-label">How much are you looking to invest in this project?</label>
+                              <select class="custom-select">
+                                <option selected>Open this select menu</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                              </select>
+                          </div>
+                      </div>
+                  </div>
+
+
+
+                  <div class="row">
+                      <div class="col-md-12">
+                          <div class="form-group">
+                              <label class="form-control-label">
+                                Are there any additional project details you would like to share?
+                              </label>
+                              <textarea class="form-control"
+                              placeholder="We harevest honey from Jamaica"
+                              rows="3"></textarea>
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="row">
+                      <div class="col-md-12">
+                          <div class="form-group">
+                              <label class="form-control-label">
+                                Lastly, how did you hear about us?
+                              </label>
+                              <input class="form-control" type="text"
+                              placeholder="John Smith told my boss about WebLime!">
+                          </div>
+                      </div>
+                  </div>
+
+
+
+                  <div class="text-center">
+                      <button class="btn btn-block btn-lg btn-primary mt-4" type="submit">Submit</button>
+                  </div>
+            </form>
+        </div>
+    </div>
+  </div>
+</section>
+{% endblock content %}

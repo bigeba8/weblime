@@ -108,7 +108,7 @@
         </div>
     </div>
     <!-- Header & Navbar -->
-        {% if request.path == '/' or request.path == "404.html" %}
+        {% if request.path == '/' %}
           <header class="" id="header-main">
           <nav class="navbar navbar-main navbar-expand-lg navbar-light" id="navbar-main">
         {% else %}
@@ -148,7 +148,10 @@
                                 <a class="nav-link" href="{% url 'solutions' %}">Solutions</a>
                             </li>
                             <li class="nav-item">
-                                {% if title == 'Solutions' or title == 'Get In Touch' %}
+                                <a class="nav-link" href="{% url 'portfolio' %}">Portfolio</a>
+                            </li>
+                            <li class="nav-item">
+                                {% if title == 'Solutions' or title == 'Portfolio' or title == 'Get In Touch' %}
                                   <a href="{% url 'get-in-touch' %}" class="btn btn-sm btn-white btn-icon ml-3">
                                 {% else %}
                                   <a href="{% url 'get-in-touch' %}" class="btn btn-sm btn-primary btn-icon ml-3">
@@ -210,6 +213,7 @@
                               </li>
                           </ul>
                     </div>
+
                     <div class="col-md-3">
                         <ul class="nav justify-content-center justify-content-md-end mt-3 mt-md-0">
                             <li class="nav-item nav-item-spaced d-none d-lg-block">
